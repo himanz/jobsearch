@@ -13,5 +13,8 @@ describe Listing do
   it "is invalid without a company" do
   	expect(Listing.new(company: nil)).to have(1).errors_on(:company)
   end
-  it "is invalid without a location"
+
+  it "is invalid without a location" do
+  	expect(Listing.new(location: nil)).to have(1).errors_on(:location)
+  end
 end

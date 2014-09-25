@@ -1,3 +1,3 @@
 class Listing < ActiveRecord::Base
-	validates :role, :company, presence: true
+	validates :role, :company, :location, presence: true
 end
