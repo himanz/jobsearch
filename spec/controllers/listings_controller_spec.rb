@@ -23,6 +23,11 @@ describe ListingsController do
   		get :show, id: listing
   		expect(assigns(:listing)).to eq listing
   	end
-  	it "renders the :show template"
+
+  	it "renders the :show template" do
+  		listing = create(:listing)
+  		get :show, id: listing
+  		expect(response).to render_template :show
+  	end
   end
 end
