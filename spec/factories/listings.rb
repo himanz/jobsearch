@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :listing do
-    role "MyString"
-    company "MyString"
-    location "MyString"
+    role "Ruby Developer"
+    company "Ruby Workshop"
+    location "Toronto, ON"
   end
 end
