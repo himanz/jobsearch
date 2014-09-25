@@ -9,7 +9,11 @@ describe ListingsController do
     		get :index
     		expect(assigns(:listings)).to match_array([listing1, listing2])
     	end
-    	it "renders the :index view"
+
+    	it "renders the :index view" do
+    		get :index
+        expect(response).to render_template :index
+    	end
     end
   end
 end
