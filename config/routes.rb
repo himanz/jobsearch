@@ -54,5 +54,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :listings, only: [:index, :show, :new]
+  resources :listings, only: [:index, :show, :new, :create]
 end

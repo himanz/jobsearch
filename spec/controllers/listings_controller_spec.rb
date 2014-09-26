@@ -42,4 +42,20 @@ describe ListingsController do
   		expect(response).to render_template :new
   	end
   end
+
+  describe 'POST #create' do
+  	context "with valid attributes" do
+  		it "saves the new listing in the database" do
+  			expect{
+          post :create, listing: attributes_for(:listing)
+  			}.to change(Listing, :count).by(1)
+  		end
+  		it "redirects to listing #show"
+  	end
+
+  	context "with invalid attributes" do
+  		it "does not save the new listing in the database"
+  		it "re-renders the :new template"
+  	end
+  end
 end
