@@ -60,10 +60,14 @@ describe ListingsController do
   	context "with invalid attributes" do
   		it "does not save the new listing in the database" do
   			expect{
-  				post:create, listing: attributes_for(:listing, role: nil)
+  				post :create, listing: attributes_for(:listing, role: nil)
   			}.to_not change(Listing, :count)
   		end
-  		it "re-renders the :new template"
+
+  		it "re-renders the :new template" do
+  			post :create, listing: attributes_for(:listing, role: nil)
+  			expect(response).to render_template :new
+  		end
   	end
   end
 end
