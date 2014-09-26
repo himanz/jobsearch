@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Listing.create(
+	role: "Ruby Developer",
+	company: "Ruby Workshop",
+	location: "Toronto, ON"
+)

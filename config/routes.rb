@@ -54,5 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  root "listings#index"
   resources :listings, except: [:update, :edit]
 end
