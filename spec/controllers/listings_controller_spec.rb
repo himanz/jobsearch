@@ -50,7 +50,11 @@ describe ListingsController do
           post :create, listing: attributes_for(:listing)
   			}.to change(Listing, :count).by(1)
   		end
-  		it "redirects to listing #show"
+  		
+  		it "redirects to listing #show" do
+  			post :create, listing: attributes_for(:listing)
+  			expect(response).to redirect_to listing_path(assigns(:listing))
+  		end
   	end
 
   	context "with invalid attributes" do
