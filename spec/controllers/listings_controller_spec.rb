@@ -30,4 +30,12 @@ describe ListingsController do
   		expect(response).to render_template :show
   	end
   end
+
+  describe 'GET #new' do
+  	it "assigns a new listing to @listing" do
+  		get :new
+  		expect(assigns(:listing)).to be_a_new(Listing)
+  	end
+  	it "renders the :new template"
+  end
 end
