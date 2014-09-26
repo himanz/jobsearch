@@ -50,7 +50,7 @@ describe ListingsController do
           post :create, listing: attributes_for(:listing)
   			}.to change(Listing, :count).by(1)
   		end
-  		
+
   		it "redirects to listing #show" do
   			post :create, listing: attributes_for(:listing)
   			expect(response).to redirect_to listing_path(assigns(:listing))
@@ -58,7 +58,11 @@ describe ListingsController do
   	end
 
   	context "with invalid attributes" do
-  		it "does not save the new listing in the database"
+  		it "does not save the new listing in the database" do
+  			expect{
+  				post:create, listing: attributes_for(:listing, role: nil)
+  			}.to_not change(Listing, :count)
+  		end
   		it "re-renders the :new template"
   	end
   end
