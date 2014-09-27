@@ -31,4 +31,12 @@ describe Listing do
   	listings = Listing.query_non_expired
   	expect(listings).to match_array([listing, listing2])
   end
+
+  it "returns only listings that are from today" do
+  	listing = create(:listing)
+  	listing2 = create(:listing2, created_at: 1.day.ago)
+  	listing3 = create(:expired_listing)
+  	listings = Listing.find_today
+  	expect(listings).to match_array([listing])
+  end
 end
