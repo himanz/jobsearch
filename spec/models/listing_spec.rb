@@ -23,4 +23,12 @@ describe Listing do
   	expect(listing.valid?).to be_falsey
   	expect(listing.errors[:location].size).to eq(1)
   end
+
+  it "returns only listings that are up to 2 weeks old" do 
+  	listing = create(:listing)
+  	listing2 = create(:listing2)
+  	listing3 = create(:expired_listing)
+  	listings = Listing.query_non_expired
+  	expect(listings).to match_array([listing, listing2])
+  end
 end
