@@ -11,3 +11,10 @@ Listing.create(
 	company: "Ruby Workshop",
 	location: "Toronto, ON"
 )
+
+Listing.create(
+	role: "Expired",
+	company: "Should not appear",
+	location: "Toronto, ON",
+	created_at: (Time.now - 15.days)
+)
