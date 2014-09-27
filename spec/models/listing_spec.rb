@@ -36,7 +36,7 @@ describe Listing do
   	listing = create(:listing)
   	listing2 = create(:listing2, created_at: 1.day.ago)
   	listing3 = create(:expired_listing)
-  	listings = Listing.find_today
+  	listings = Listing.find_by_date(Date.today)
   	expect(listings).to match_array([listing])
   end
 end

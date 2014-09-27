@@ -5,8 +5,7 @@ class Listing < ActiveRecord::Base
 		where("created_at >= ?", 2.week.ago.utc)
 	end
 
-	def self.find_today
-		date = Date.today
+	def self.find_by_date(date)
 		where(created_at: date.beginning_of_day..date.end_of_day )
 	end
 end
