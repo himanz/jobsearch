@@ -7,14 +7,20 @@ describe Listing do
   end
 
   it "is invalid without a role" do
-  	expect(Listing.new(role: nil)).to have(1).errors_on(:role)
+  	listing = Listing.new(role: nil)	
+  	expect(listing.valid?).to be_falsey
+  	expect(listing.errors[:role].size).to eq(1)
   end
 
   it "is invalid without a company" do
-  	expect(Listing.new(company: nil)).to have(1).errors_on(:company)
+  	listing = Listing.new(company: nil)
+  	expect(listing.valid?).to be_falsey
+  	expect(listing.errors[:company].size).to eq(1)
   end
 
   it "is invalid without a location" do
-  	expect(Listing.new(location: nil)).to have(1).errors_on(:location)
+  	listing = Listing.new(location: nil)
+  	expect(listing.valid?).to be_falsey
+  	expect(listing.errors[:location].size).to eq(1)
   end
 end
