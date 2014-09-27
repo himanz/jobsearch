@@ -11,5 +11,12 @@ FactoryGirl.define do
     	company "Python Workshop"
     	location "Toronto, ON"
     end
+
+    factory :expired_listing do
+    	role "Expire"
+    	company "Expire Inc"
+    	location "Toronto, ON"
+    	created_at (Time.now - 15.days)
+    end
   end
 end

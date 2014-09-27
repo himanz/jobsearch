@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ListingsController do
   describe 'GET #index' do
     context 'without params' do
-    	it "populates an array of all listings" do
+    	it "populates an array of all non-expired listings" do
     		listing1 = create(:listing)
     		listing2 = create(:listing2)
     		get :index
