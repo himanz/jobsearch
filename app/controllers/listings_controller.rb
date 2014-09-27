@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
 	def index
-		@listings = Listing.all
+		@listings = Listing.query_non_expired
 	end
 
 	def show

@@ -6,6 +6,7 @@ describe ListingsController do
     	it "populates an array of all non-expired listings" do
     		listing1 = create(:listing)
     		listing2 = create(:listing2)
+    		listing3 = create(:expired_listing)
     		get :index
     		expect(assigns(:listings)).to match_array([listing1, listing2])
     	end
