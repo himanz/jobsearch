@@ -1,7 +1,3 @@
-<% @listings.each do |listing| %>
-  <%= render 'listing_row', listing: listing %>
-<% end %>
-
 <% if @listings_today.present? %>
   <h1>TODAY</h1>
   <% @listings_today.each do |listing| %>
