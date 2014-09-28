@@ -47,4 +47,10 @@ describe Listing do
   	listings = Listing.find_by_date(Time.now.utc.to_date.yesterday)
   	expect(listings).to match_array([listing4])
   end
+
+  it "returns a formatted date create" do
+  	listing = create(:listing)
+  	listing_create = listing.create_date
+  	expect(listing_create).to eq Date.today
+  end
 end

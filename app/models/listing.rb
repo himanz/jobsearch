@@ -8,4 +8,8 @@ class Listing < ActiveRecord::Base
 	def self.find_by_date(date)
 		where(created_at: date.beginning_of_day..date.end_of_day )
 	end
+
+	def create_date
+		created_at.to_date
+	end
 end
