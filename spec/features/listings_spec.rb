@@ -23,6 +23,7 @@ feature 'Listing management' do
 		expect(page).to have_content "Ruby Developer"
 		expect(page).to have_content "Ruby Workshop"
 		expect(page).to have_content "Toronto, ON"
+    expect(page).to have_content Date.today
 	end
 
   scenario "user views listings from today and yesterday" do
