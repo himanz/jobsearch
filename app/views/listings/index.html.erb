@@ -1,3 +1,17 @@
 <% @listings.each do |listing| %>
   <%= render 'listing_row', listing: listing %>
 <% end %>
+
+<% if @listings_today.present? %>
+  <h1>TODAY</h1>
+  <% @listings_today.each do |listing| %>
+    <%= render 'listing_row', listing: listing %>
+  <% end %>
+<% end %>
+
+<% if @listings_yesterday.present? %>
+  <h1>YESTERDAY</h1>
+  <% @listings_yesterday.each do |listing| %>
+    <%= render 'listing_row', listing: listing %>
+  <% end %>
+<% end %>

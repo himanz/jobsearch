@@ -1,6 +1,8 @@
 class ListingsController < ApplicationController
 	def index
 		@listings = Listing.query_non_expired
+		@listings_today = @listings.find_by_date(Time.now.utc.to_date)
+		@listings_yesterday = @listings.find_by_date(Time.now.utc.to_date.yesterday)
 	end
 
 	def show

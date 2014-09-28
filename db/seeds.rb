@@ -18,3 +18,10 @@ Listing.create(
 	location: "Toronto, ON",
 	created_at: (Time.now - 15.days)
 )
+
+Listing.create(
+	role: "Yesterday",
+	company: "Appear under Yesterday",
+	location: "Toronto, ON",
+	created_at: (Time.now - 1.day)
+)
