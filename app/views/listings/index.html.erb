@@ -11,3 +11,7 @@
     <%= render 'listing_row', listing: listing %>
   <% end %>
 <% end %>
+
+<% for i in 2..13 %>
+  <h1><%= (Date.today - i.day).to_formatted_s(:month_ordinal) %></h1>
+<% end %>
