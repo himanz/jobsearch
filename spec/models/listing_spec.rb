@@ -39,4 +39,12 @@ describe Listing do
   	listings = Listing.find_by_date(Date.today)
   	expect(listings).to match_array([listing])
   end
+
+  it "returns only listings that are from yesterday" do
+  	listing = create(:listing)
+  	listing3 = create(:expired_listing)
+  	listing4 = create(:yesterday_listing)
+  	listings = Listing.find_by_date(Time.now.utc.to_date.yesterday)
+  	expect(listings).to match_array([listing4])
+  end
 end

@@ -16,7 +16,13 @@ FactoryGirl.define do
     	role "Expire"
     	company "Expire Inc"
     	location "Toronto, ON"
-    	created_at (Time.now - 15.days)
+    	created_at (Time.now.utc - 15.days)
+    end
+
+    factory :yesterday_listing do
+        role "Chef"
+        company "Food Inc"
+        created_at (Time.now.utc - 1.day)
     end
   end
 end
