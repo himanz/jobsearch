@@ -26,11 +26,4 @@ feature 'Listing management' do
     expect(page).to have_content Date.today
 	end
 
-  scenario "user views listings from today and yesterday" do
-    create(:listing)
-    create(:yesterday_listing)
-    visit listings_path
-    expect(page).to have_content "TODAY"
-    expect(page).to have_content "YESTERDAY"
-  end
 end
