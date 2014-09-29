@@ -12,4 +12,8 @@ class Listing < ActiveRecord::Base
 	def create_date
 		created_at.to_date
 	end
+
+	def create_date_month_day
+		created_at.to_date.to_formatted_s(:short)
+	end
 end

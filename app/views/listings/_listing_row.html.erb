@@ -1,7 +1,5 @@
 <%= link_to listing.role, listing %>
 <%= "(#{listing.company})" %>
 <br>
-<%= "#{listing.location}"  %>
-<br>
-<%= "#{listing.create_date.to_formatted_s(:month_ordinal)}" %>
+<%= "#{listing.location} - #{listing.create_date_month_day}"  %>
 <br>
