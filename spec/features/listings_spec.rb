@@ -13,7 +13,7 @@ feature 'Listing management' do
   	expect(current_path).to eq listing_path(listing.id + 1)
   	expect(page).to have_content "Ruby Developer"
 		expect(page).to have_content "Ruby Workshop"
-		expect(page).to have_content "Toronto, ON"
+		expect(page).to have_content "Toronto, ON"    
   end
 
 	scenario "click link of a listing in index" do
