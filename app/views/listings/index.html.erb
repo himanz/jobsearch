@@ -12,6 +12,11 @@
   <% end %>
 <% end %>
 
-<% for i in 2..13 %>
+<% for i in 0..13 %>
   <h1><%= (Date.today - i.day).to_formatted_s(:month_ordinal) %></h1>
+  <% if @listings.find_by_date(Date.today - i.day) == [] %>
+    <p> No job listing for this date </p>
+  <% else %>
+    <!-- Render the listing row here -->
+  <% end %>
 <% end %>
