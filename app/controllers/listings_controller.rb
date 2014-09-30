@@ -7,6 +7,11 @@ class ListingsController < ApplicationController
 
 	def show
 		@listing = Listing.find(params[:id])
+
+		respond_to do |format|
+			format.html { render @listing }
+			format.js { render @listing }
+		end
 	end
 
 	def new
