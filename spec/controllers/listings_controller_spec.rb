@@ -48,7 +48,7 @@ describe ListingsController do
     it "assigns a listing to @listing" do
       listing = create(:listing)
       get :description, id: listing
-      expect(assigns(:listing)).eq listing    
+      expect(assigns(:listing)).to eq listing    
     end
 
     it "renders the :description template" do
