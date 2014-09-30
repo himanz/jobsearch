@@ -8,12 +8,14 @@ feature 'Listing management' do
   		fill_in 'Role', with: listing.role
   		fill_in 'Company', with: listing.company
   		fill_in 'Location', with: listing.location
+      fill_in 'Description', with: listing.description
   		click_button 'Submit'
   	}.to change(Listing, :count).by(1)
   	expect(current_path).to eq listing_path(listing.id + 1)
   	expect(page).to have_content "Ruby Developer"
 		expect(page).to have_content "Ruby Workshop"
-		expect(page).to have_content "Toronto, ON"    
+		expect(page).to have_content "Toronto, ON"
+    expect(page).to have_content "work hard play hard"    
   end
 
 	scenario "click link of a listing in index" do

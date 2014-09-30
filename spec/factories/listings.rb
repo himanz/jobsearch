@@ -5,6 +5,7 @@ FactoryGirl.define do
     role "Ruby Developer"
     company "Ruby Workshop"
     location "Toronto, ON"
+    description "work hard play hard"
 
     factory :listing2 do
     	role "Python Developer"

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Listing do
-  it "is valid with a role, company and location" do
+  it "is valid with a role, company, location and description" do
   	listing = create(:listing)
   	expect(listing).to be_valid
   end
@@ -22,6 +22,12 @@ describe Listing do
   	listing = Listing.new(location: nil)
   	expect(listing.valid?).to be_falsey
   	expect(listing.errors[:location].size).to eq(1)
+  end
+
+  it "is invalid without a description" do
+  	listing = Listing.new(description: nil)
+  	expect(listing.valid?).to be_falsey
+  	expect(listing.errors[:description].size).to eq(1)
   end
 
   it "returns only listings that are up to 2 weeks old" do 
