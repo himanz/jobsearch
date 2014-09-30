@@ -27,6 +27,10 @@ class ListingsController < ApplicationController
 		end
 	end
 
+	def description
+		
+	end
+
   private
 
 	def listing_params
