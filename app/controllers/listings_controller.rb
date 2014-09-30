@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
 
 		respond_to do |format|
 			format.html { }
-			format.js { render @listing }
 		end
 	end
 
@@ -29,6 +28,10 @@ class ListingsController < ApplicationController
 
 	def description
 		@listing = Listing.find(params[:id])
+		respond_to do |format|
+			format.html {}
+			format.js { render "description" }
+		end
 	end
 
   private
