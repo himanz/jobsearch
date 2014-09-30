@@ -9,7 +9,7 @@ class ListingsController < ApplicationController
 		@listing = Listing.find(params[:id])
 
 		respond_to do |format|
-			format.html { render @listing }
+			format.html { }
 			format.js { render @listing }
 		end
 	end

@@ -44,6 +44,20 @@ describe ListingsController do
   	end
   end
 
+  describe 'GET #description' do
+    it "assigns a listing to @listing" do
+      listing = create(:listing)
+      get :description, id: listing
+      expect(assigns(:listing)).eq listing    
+    end
+
+    it "renders the :description template" do
+      listing = create(:listing)
+      get :description, id: listing
+      expect(response).to render_template :description
+    end
+  end
+
   describe 'POST #create' do
   	context "with valid attributes" do
   		it "saves the new listing in the database" do
