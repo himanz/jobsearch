@@ -1,5 +1,9 @@
-<%= link_to listing.role, listing %>
-<%= "(#{listing.company})" %>
-<br>
-<%= "#{listing.location} - #{listing.create_date_month_day}"  %>
-<br>
+<div id=<%= "listing-#{listing.id}" %>>
+	<%= link_to listing.role, listing %>
+	<%= "(#{listing.company})" %>
+	<br>
+	<%= "#{listing.location} - #{listing.create_date_month_day}"  %>
+	<br>
+	<p class="description">Description</p>
+	</br>
+</div>
