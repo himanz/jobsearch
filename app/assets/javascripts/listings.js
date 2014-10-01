@@ -1,25 +1,17 @@
 $(document).ready(function() {
-  $('.description').on("click", function() {
+  $('.show-description').on("click", function() {
+  	var button = $(this);
   	var id = $(this).closest('div').attr("data-id");
-  	var hold = $(this)
-  	$.get('listings/' + id + '/description', function(data) {
-      hold.append(data);
-      console.log(data);
-  	});
-  
-		// var model = "listing";
-		// var attribute = "description";
-		// var param = model + "[" + attribute + "]";
-		// var value = "test";
+  	var listing = $(this).closest('.listing-row');
 
-		// $.ajax({
-		//   url: "listings/" + id + "/description",
-		//   type: "GET",
-		//   data: 'json'
-		// }).done(function(data) {
-		//    alert("Works!");
-		//    hold.append(data);
-  //      console.log(data);
-		// });
+  	$(button).remove();
+  	$(listing).append("<button class='toggle-description'>Description</button>");
+  	$.get('listings/' + id + '/description', function(data) {
+      $(listing).append("<div class='description'>"+ data + "</div>");  
+  	});
+  });
+
+  $('.toggle-description').on("click", function() {
+  	$(this).next(".description").toggle();
   });
 });
