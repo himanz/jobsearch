@@ -10,7 +10,8 @@ $(document).ready(function() {
 	  	var listing = $(this).closest('.listing-row');
       $(btn).addClass('toggle-description');
 	  	btn.button('loading');
-	  	$.get('listings/' + id + '/description', function(data) {
+	  	$.get('listings/' + id + '/description') 
+	  		.done(function(data) {
 	      $(listing).append("<div class='description'>"+ data + "</div>");
 	      btn.button('reset');  
 	  	});
