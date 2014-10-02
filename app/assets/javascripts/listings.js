@@ -5,13 +5,14 @@ $(document).ready(function() {
   	if ($(this).hasClass('toggle-description'))	 {
   		$(this).closest('.listing-row').find(".description").slideToggle();
   	} else {
-	  	var button = $(this);
+	  	var btn = $(this);
 	  	var id = $(this).closest('div').attr("data-id");
 	  	var listing = $(this).closest('.listing-row');
-      $(button).addClass('toggle-description');
-	  	  
+      $(btn).addClass('toggle-description');
+	  	btn.button('loading');
 	  	$.get('listings/' + id + '/description', function(data) {
-	      $(listing).append("<div class='description'>"+ data + "</div>");  
+	      $(listing).append("<div class='description'>"+ data + "</div>");
+	      btn.button('reset');  
 	  	});
     }
   });
