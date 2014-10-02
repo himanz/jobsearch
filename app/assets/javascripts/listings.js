@@ -14,6 +14,7 @@ $(document).ready(function() {
 
   // Toggle show / hide of description
   $('.toggle-description').on("click", function() {
-  	$(this).next(".description").toggle();
+  	// $(this).closest('.listing-row').find(".description").toggle();
+  	$(this).next(".description").slideToggle();
   });
 });
