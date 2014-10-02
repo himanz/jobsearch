@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	// Gets the relevant description of the listing from server
   $('.show-description').on("click", function() {
   	var button = $(this);
   	var id = $(this).closest('div').attr("data-id");
@@ -11,6 +12,7 @@ $(document).ready(function() {
   	});
   });
 
+  // Toggle show / hide of description
   $('.toggle-description').on("click", function() {
   	$(this).next(".description").toggle();
   });
