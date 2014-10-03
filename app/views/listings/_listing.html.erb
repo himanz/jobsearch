@@ -4,6 +4,6 @@
 	<br>
 	<%= "#{listing.location} - #{listing.create_date_month_day}"  %>
 	<br>
-	<%= button_tag "+ Description", class: "show-description btn btn-primary", data_loading_text: "Loading..."%>
+	<%= button_tag "+ Description", id: "#{listing.id}-description-button", class: "show-description btn btn-primary", data_loading_text: "Loading..."%>
 	</br>
 </div>

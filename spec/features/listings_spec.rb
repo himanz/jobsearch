@@ -28,4 +28,11 @@ feature 'Listing management' do
     expect(page).to have_content Date.today
 	end
 
+  scenario "click description button in index", js: true do
+    listing = create(:listing)
+    visit root_path
+    click_button "#{listing.id}-description-button"
+    expect(page).to have_content "work hard play hard"
+  end
+
 end

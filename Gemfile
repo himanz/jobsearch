@@ -33,6 +33,9 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "minitest"
   gem "capybara"
+  gem "selenium-webdriver"
+  gem "chromedriver-helper"
+  gem "database_cleaner"
 end
 
 # Use ActiveModel has_secure_password

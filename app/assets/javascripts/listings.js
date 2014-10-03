@@ -20,7 +20,7 @@ $(document).ready(function() {
 	  	btn.button('loading');
 	  	$.get('listings/' + id + '/description') 
 	  		.done(function(data) {
-	      $(listing).append("<div class='description'>"+ data + "</div>");
+	      $(listing).append("<div class='description' id='" + id + "-description'>" + data + "</div>");
 	      btn.button('reset');
 	      btn.text("- Description");
 	      btn.addClass('show');  
