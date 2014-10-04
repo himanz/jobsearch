@@ -34,5 +34,10 @@ RSpec.describe CompaniesController, :type => :controller do
   		get :new
   		expect(assigns(:company)).to be_a_new(Company)
   	end
+
+  	it "renders the new template" do
+  		get :new
+  		expect(response).to render_template :new
+  	end
   end
 end
