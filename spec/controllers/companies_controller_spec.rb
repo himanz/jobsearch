@@ -21,7 +21,11 @@ RSpec.describe CompaniesController, :type => :controller do
   		get :show, id: company
   		expect(assigns(:company)).to eq company
   	end
-  	
-    it "renders the show template"
+
+    it "renders the show template" do
+    	company = create(:company)
+    	get :show, id: company
+    	expect(response).to render_template :show
+    end
   end
 end
