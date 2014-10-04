@@ -15,4 +15,18 @@
 			expect(page).to have_content "Great place to work."
 			expect(page).to have_content "Toronto, ON"
 		end
+
+		scenario "Edit a company" do
+			company = create(:company)
+			visit edit_company_path(company)
+			expect{
+				fill_in 'Name', with: "Python Dojo"
+				fill_in 'Information', with: "We are in Python"
+				click_button 'Submit'
+			}.to_not change(Company, :count)
+			expect(current_path).to eq company_path(company)
+			expect(page).to have_content "Python Dojo"
+			expect(page).to have_content "We are in Python"
+			expect(page).to have_content "Toronto, ON"
+		end
 	end
