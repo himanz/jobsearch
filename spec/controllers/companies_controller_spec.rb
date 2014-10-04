@@ -41,6 +41,16 @@ RSpec.describe CompaniesController, :type => :controller do
   	end
   end
 
+  describe 'GET #edit' do
+  	it "assigns the requested company to @company" do
+  		company = create(:company)
+  		get :edit, id: company
+  		expect(assigns(:company)).to eq company
+  	end
+  	
+  	it "renders the :edit template"
+  end
+
   describe 'POST #create' do
   	context "with valid attributes" do
   		it "saves the new company to the database" do
