@@ -1,0 +1,12 @@
+<%= form_for @company do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :information %>
+  <%= f.text_area :information %>
+  <br>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br>
+  <%= f.submit :Submit %>
+<% end %>
