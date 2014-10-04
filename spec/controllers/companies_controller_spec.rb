@@ -101,7 +101,11 @@ RSpec.describe CompaniesController, :type => :controller do
   			expect(@company.information).to eq "Best search for jobs"
   			expect(@company.location).to eq "Toronto, ON"
   		end
-  		it "redirects to the updated company"
+
+  		it "redirects to the updated company" do
+  			patch :update, id: @company, company: attributes_for(:company)
+  			expect(response).to redirect_to @company
+  		end
   	end
 
   	context "with invalid attributes" do
