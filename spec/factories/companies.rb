@@ -2,8 +2,13 @@
 
 FactoryGirl.define do
   factory :company do
-    name "MyString"
-    information "MyString"
-    location "MyString"
+    name "Ruby Inc"
+    information "Great place to work."
+    location "Toronto, ON"
+
+    factory :company2 do
+    	name "Python Inc"
+    	information "Good place to work"
+    end
   end
 end

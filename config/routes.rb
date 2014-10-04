@@ -55,9 +55,12 @@ Rails.application.routes.draw do
   #   end
 
   root "listings#index"
+  
   resources :listings, except: [:update, :edit] do
     member do
       get "description"
     end
   end
+
+  resources :companies
 end
