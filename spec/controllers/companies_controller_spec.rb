@@ -120,7 +120,8 @@ RSpec.describe CompaniesController, :type => :controller do
   		end
 
   		it "re-renders the edit template" do
-  			
+  			patch :update, id: @company, company: attributes_for(:company, name: "Hello", information: nil, location: "Markham, ON")
+  			expect(response).to render_template :edit
   		end
   	end
   end
