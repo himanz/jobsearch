@@ -48,8 +48,11 @@ RSpec.describe CompaniesController, :type => :controller do
   				post :create, company: attributes_for(:company)
   			}.to change(Company, :count).by(1)
   		end
-  		
-  		it "redirects to company #show"
+
+  		it "redirects to company #show" do
+  			post :create, company: attributes_for(:company)
+  			expect(response).to redirect_to company_path(assigns(:company))
+  		end
   	end
 
   	context "with invalid attributes" do
