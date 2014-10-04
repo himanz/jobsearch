@@ -28,6 +28,9 @@
     </div>
   </div>
 
+<%= flash.each do |msg| %>
+  <%= msg %>
+<% end %>
 
 <%= yield %>
 

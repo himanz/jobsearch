@@ -29,4 +29,14 @@
 			expect(page).to have_content "We are in Python"
 			expect(page).to have_content "Toronto, ON"
 		end
+
+		scenario "Delete a company" do
+			company = create(:company)
+			visit edit_company_path(company)
+			expect{
+				click_button "Delete"
+			}.to change(Company, :count).by(-1)
+			expect(current_path).to eq companies_path
+			expect(page).to have_content "Company was successfully deleted"
+		end
 	end
