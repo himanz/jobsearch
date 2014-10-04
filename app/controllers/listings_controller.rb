@@ -15,6 +15,7 @@ class ListingsController < ApplicationController
 
 	def new
 		@listing = Listing.new
+		@companies = Company.all
 	end
 
 	def create

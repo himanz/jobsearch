@@ -37,6 +37,13 @@ describe ListingsController do
   		get :new
   		expect(assigns(:listing)).to be_a_new(Listing)
   	end
+
+    it "populates an array with all companies" do
+      company1 = create(:company)
+      company2 = create(:company2)
+      get :new
+      expect(assigns(:companies)).to match_array([company1, company2])
+    end
   	
   	it "renders the :new template" do
   		get :new
