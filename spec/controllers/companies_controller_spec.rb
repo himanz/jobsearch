@@ -136,7 +136,10 @@ RSpec.describe CompaniesController, :type => :controller do
   			}.to change(Company, :count).by(-1)
   		end
 
-  		it "redirects to company index"
+  		it "redirects to company index" do
+  			delete :destroy, id: @company
+  			expect(response).to redirect_to companies_path
+  		end
   	end
   end
 end
