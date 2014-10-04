@@ -61,7 +61,11 @@ RSpec.describe CompaniesController, :type => :controller do
   				post :create, company: attributes_for(:company, name: nil)
   			}.to_not change(Company, :count)
   		end
-  		it "re-renders :new template"
+
+  		it "re-renders :new template" do
+  			post :create, company: attributes_for(:company, name: nil)
+  			expect(response).to render_template :new
+  		end
   	end
   end
 end
