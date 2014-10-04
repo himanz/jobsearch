@@ -40,4 +40,21 @@ RSpec.describe CompaniesController, :type => :controller do
   		expect(response).to render_template :new
   	end
   end
+
+  describe 'POST #create' do
+  	context "with valid attributes" do
+  		it "saves the new company to the database" do
+  			expect{
+  				post :create, company: attributes_for(:company)
+  			}.to change(Company, :count).by(1)
+  		end
+  		
+  		it "redirects to company #show"
+  	end
+
+  	context "with invalid attributes" do
+  		it "does not save the new company to the database"
+  		it "re-renders :new template"
+  	end
+  end
 end
