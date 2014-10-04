@@ -56,7 +56,11 @@ RSpec.describe CompaniesController, :type => :controller do
   	end
 
   	context "with invalid attributes" do
-  		it "does not save the new company to the database"
+  		it "does not save the new company to the database" do
+  			expect{
+  				post :create, company: attributes_for(:company, name: nil)
+  			}.to_not change(Company, :count)
+  		end
   		it "re-renders :new template"
   	end
   end
