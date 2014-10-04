@@ -109,8 +109,19 @@ RSpec.describe CompaniesController, :type => :controller do
   	end
 
   	context "with invalid attributes" do
-  		it "does not change the company's attributes"
-  		it "re-renders the edit template"
+  		it "does not change the company's attributes" do
+  			patch :update, id: @company, company: attributes_for(:company, name: "Hello", information: nil, location: "Markham, ON")
+  			@company.reload
+  			expect(@company.name).to_not eq "Hello"
+  			expect(@company.location).to_not eq "Markham, ON"
+  			expect(@company.name).to eq "Job Searcher"
+  			expect(@company.information).to eq "Search for jobs"
+  			expect(@company.location).to eq "Toronto, ON"
+  		end
+
+  		it "re-renders the edit template" do
+  			
+  		end
   	end
   end
 end
