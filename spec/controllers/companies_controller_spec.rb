@@ -124,5 +124,19 @@ RSpec.describe CompaniesController, :type => :controller do
   			expect(response).to render_template :edit
   		end
   	end
+
+  	describe "DELETE #destroy" do
+  		before :each do
+  			@company = create(:company)
+  		end
+
+  		it "deletes the company" do
+  			expect {
+  				delete :destroy, id: @company
+  			}.to change(Company, :count).by(-1)
+  		end
+
+  		it "redirects to company index"
+  	end
   end
 end
