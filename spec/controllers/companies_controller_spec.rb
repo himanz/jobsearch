@@ -82,4 +82,24 @@ RSpec.describe CompaniesController, :type => :controller do
   		end
   	end
   end
+
+  describe "PATCH #update" do
+  	before :each do
+  		@company = create(:company, name: "Job Searcher", information: "Search for jobs", location: "Toronto, ON")
+  	end
+
+  	context "with valid attributes" do
+  		it "located the requested @company" do
+  			patch :update, id: @company, company: attributes_for(:company)
+  			expect(assigns(:company)).to eq @company
+  		end
+  		it "changes @company's attributes"
+  		it "redirects to the updated company"
+  	end
+
+  	context "with invalid attributes" do
+  		it "does not change the company's attributes"
+  		it "re-renders the edit template"
+  	end
+  end
 end
