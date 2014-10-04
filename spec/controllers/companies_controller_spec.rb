@@ -93,7 +93,14 @@ RSpec.describe CompaniesController, :type => :controller do
   			patch :update, id: @company, company: attributes_for(:company)
   			expect(assigns(:company)).to eq @company
   		end
-  		it "changes @company's attributes"
+
+  		it "changes @company's attributes" do
+  			patch :update, id: @company, company: attributes_for(:company, name: "The Job Finder", information: "Best search for jobs")
+  			@company.reload
+  			expect(@company.name).to eq "The Job Finder"
+  			expect(@company.information).to eq "Best search for jobs"
+  			expect(@company.location).to eq "Toronto, ON"
+  		end
   		it "redirects to the updated company"
   	end
 
