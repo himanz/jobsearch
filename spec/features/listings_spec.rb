@@ -48,8 +48,9 @@ feature 'Listing management' do
   scenario "click company name in new to autofill relevant fields" do
     company = create(:company)
     listing = create(:listing)
+    visit new_listing_path
     expect(page).to have_content "Ruby Inc"
-    click_link "Ruby Inc"
+    click_button "Ruby Inc"
     expect{
       fill_in 'Role', with: listing.role
       fill_in 'Description', with: listing.description

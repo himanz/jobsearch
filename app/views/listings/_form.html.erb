@@ -2,14 +2,17 @@
   <%= f.label :role %>
   <%= f.text_field :role %>
 
-  <%= f.label :company %>
-  <%= f.text_field :company %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
 
   <%= f.label :location %>
   <%= f.text_field :location %>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.label :company_name %>
+  <%= f.text_field :company_name %>
+
+  <%= f.label :company_information %>
+  <%= f.text_area :company_information
 
   <%= f.submit :Submit %>
 <% end %>

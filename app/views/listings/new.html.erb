@@ -1,1 +1,4 @@
+<% @companies.each do |company| %>
+  <%= button_tag company.name, data_name: company.name, data_information: company.information, data_location: company.location %>
+<% end %>
 <%= render 'form' %>

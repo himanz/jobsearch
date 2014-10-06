@@ -8,14 +8,14 @@
 
 Listing.create(
 	role: "Ruby Developer",
-	company: "Ruby Workshop",
+	company_name: "Ruby Workshop",
 	location: "Toronto, ON",
 	description: "Senior Ruby Developer only"
 )
 
 Listing.create(
 	role: "Expired",
-	company: "Should not appear",
+	company_name: "Should not appear",
 	location: "Toronto, ON",
 	created_at: (Time.now - 15.days),
 	description: "This should be expired"
@@ -23,7 +23,7 @@ Listing.create(
 
 Listing.create(
 	role: "Yesterday",
-	company: "Appear under Yesterday",
+	company_name: "Appear under Yesterday",
 	location: "Toronto, ON",
 	created_at: (Time.now - 1.day),
 	description: "This is only yesterday"
