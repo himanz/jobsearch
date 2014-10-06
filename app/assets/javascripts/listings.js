@@ -27,4 +27,10 @@ $(document).ready(function() {
 	  	});
     }
   });
+
+  $(".companyFill").on("click", function() {
+    $("#listing_company").val($(this).data("name"));
+    $("#listing_company_information").val($(this).data("information"));
+    $("#listing_location").val($(this).data("location"));
+  });
 });

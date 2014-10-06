@@ -45,7 +45,7 @@ feature 'Listing management' do
     expect(page).to have_content "+ Description"
   end
 
-  scenario "click company name in new to autofill relevant fields" do
+  scenario "click company name in new to autofill relevant fields", js: true do
     company = create(:company)
     listing = create(:listing)
     visit new_listing_path
