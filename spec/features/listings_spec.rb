@@ -69,4 +69,11 @@ feature 'Listing management' do
     expect(page).to have_link("(Ruby Workshop)", href: "http://www.google.com")
     click_link "(Ruby Workshop)"
   end
+
+  scenario "listing with no company website should not have a link to website" do
+    listing = create(:listing)
+    visit listings_path
+    expect(page).to_not have_link("(Ruby Workshop)")
+    expect(page).to have_content "(Ruby Workshop)"
+  end
 end
