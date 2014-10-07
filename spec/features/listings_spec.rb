@@ -60,6 +60,7 @@ feature 'Listing management' do
     expect(page).to have_content "Ruby Inc"
     expect(page).to have_content "Toronto, ON"
     expect(page).to have_content "Great place to work."
+    expect(page).to have_link("www.google.com", href: "www.google.com") 
   end
 
 end

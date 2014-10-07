@@ -1,4 +1,4 @@
 <% @companies.each do |company| %>
-  <%= button_tag company.name, class: "companyFill", data: {name: company.name, information: company.information, location: company.location } %>
+  <%= button_tag company.name, class: "companyFill", data: {name: company.name, information: company.information, location: company.location, website: company.website } %>
 <% end %>
 <%= render 'form' %>

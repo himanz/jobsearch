@@ -32,5 +32,6 @@ $(document).ready(function() {
     $("#listing_company").val($(this).data("name"));
     $("#listing_company_information").val($(this).data("information"));
     $("#listing_location").val($(this).data("location"));
+    $("#listing_company_website").val($(this).data("website"));
   });
 });
