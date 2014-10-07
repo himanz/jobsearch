@@ -60,7 +60,13 @@ feature 'Listing management' do
     expect(page).to have_content "Ruby Inc"
     expect(page).to have_content "Toronto, ON"
     expect(page).to have_content "Great place to work."
-    expect(page).to have_link("www.google.com", href: "www.google.com") 
+    expect(page).to have_link("http://www.google.com", href: "http://www.google.com") 
   end
-
+  
+  scenario "click listing company website link in index" do
+    listing = create(:listing, company_website: "http://www.google.com")
+    visit listings_path
+    expect(page).to have_link("(Ruby Workshop)", href: "http://www.google.com")
+    click_link "(Ruby Workshop)"
+  end
 end

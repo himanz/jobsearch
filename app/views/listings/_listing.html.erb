@@ -1,6 +1,6 @@
 <div class="listing-row" data-id="<%= listing.id %>">
 	<%= link_to listing.role, listing %>
-	<%= "(#{listing.company})" %>
+	<%= link_to "(#{listing.company})", listing.company_website, class: "companyWebsiteLink", id: "#{listing.id}-websiteLink" %>
 	<br>
 	<%= "#{listing.location} - #{listing.create_date_month_day}"  %>
 	<br>

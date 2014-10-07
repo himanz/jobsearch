@@ -5,7 +5,7 @@ FactoryGirl.define do
     name "Ruby Inc"
     information "Great place to work."
     location "Toronto, ON"
-    website "www.google.com"
+    website "http://www.google.com"
 
     factory :company2 do
     	name "Python Inc"

@@ -10,7 +10,8 @@ Listing.create(
 	role: "Ruby Developer",
 	company: "Ruby Workshop",
 	location: "Toronto, ON",
-	description: "Senior Ruby Developer only"
+	description: "Senior Ruby Developer only",
+	company_website: "http://www.google.com"
 )
 
 Listing.create(
